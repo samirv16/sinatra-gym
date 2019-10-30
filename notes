@@ -1,0 +1,10 @@
+members:
+name
+username
+password password_digest
+
+memberships:
+name
+description.text
+price.float
+foreign key: member_id
