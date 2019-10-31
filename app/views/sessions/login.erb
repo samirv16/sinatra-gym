@@ -7,11 +7,11 @@
         <Label for="password">Password:</Label>
         <input id="password" type="password" name="password">
         <br>
+        <input type="submit" value="Login">
+
         <% if @failed %>
             <p class="danger">Your username/password combination was incorrect</p>
         <% end %>
-        <br>
-        <input type="submit" value="Login">
         
 
 </form>
