@@ -1,0 +1,22 @@
+<form action="/signup" method="POST">
+        
+
+    <Label for="name">Name:</Label>
+    <input id="name" type="text" name="name">
+    <br>
+    <Label for="username">Username:</Label>
+    <input id="username" type="text" name="username">
+    <br>
+    <Label for="password">Password:</Label>
+    <input id="password" type="password" name="password">
+    <br>
+    <input type="submit" value="SignUp">
+</form>
+
+    <% if @user && @user.errors.any? %>
+        <% @user.errors.full_messages.each do |e| %>
+            <p class="danger"><%= e %></p>
+        <% end %>
+    <% end %>
+
+

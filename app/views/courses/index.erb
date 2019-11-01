@@ -1,1 +1,4 @@
-sup mofo
+<% @courses.each do |course| %>
+    <%= erb :'courses/_course', locals: {user: course.user, course: course} %>
+<% end %>
+

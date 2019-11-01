@@ -14,11 +14,25 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+
+      <h1>Sam's Taps & Abs</h1>
+
+      <% if logged_in? %>
+
+        <p><a href="/home">Home</a><br><a href="/courses">Courses</a></p>
+        
+      <% end %>
+
+
+
     <div class="wrapper">
 
         <%= yield %>
 
       <footer class="branding">
+          <% if logged_in? %>
+          <p><a href="/logout">Logout</a></p>
+          <% end %>
         <small>&copy; 2019 <strong>SinatraGym</strong></small>
       </footer>
     </div>
