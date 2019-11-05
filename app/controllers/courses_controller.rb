@@ -32,14 +32,19 @@ class CoursesController < ApplicationController
         end
     end
 
-    get '/courses/:id/edit' do
-        authenticate
-        @course = Course.find_by(id: params[:id])
+    get '/courses/:id/edit' do 
+        authenticate_user
+        @course = Course.find_by_id(params[:id])
         if @course 
             erb :'courses/edit'
         else
             erb :error, layout: false
         end
+    end
+
+    patch '/courses/:id' do
+        authenticate
+
     end
 
 
