@@ -1,0 +1,25 @@
+<% if !!@messege  %>
+
+    <p class="danger"><%= @messege %></p>
+
+<% end %>
+
+<form action="/courses" method="post">
+
+    <Label for="name">name:</Label>
+    <input id="name" type="text" name="name">
+    <br>
+    <Label for="name">Description:</Label>
+    <br>
+    <textarea name="description" id="description" cols="30" rows="5">
+    <%= @course.description %>
+    </textarea>
+    <br>
+    <Label for="price">Price:</Label>
+    <input id="price" type="text" name="price">
+    <br>
+    <input type="submit" value="Create">
+    
+    
+
+</form>
