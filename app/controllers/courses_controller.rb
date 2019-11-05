@@ -24,8 +24,8 @@ class CoursesController < ApplicationController
     end
 
     delete '/courses/:id' do 
-        authenticate
         course = Course.find_by_id(params[:id])
+        authenticate_user(course)
         if course
             course.delete
             redirect '/courses'
@@ -35,17 +35,14 @@ class CoursesController < ApplicationController
     get '/courses/:id/edit' do 
         @course = Course.find_by_id(params[:id])
         authenticate_user(@course)
-        if @course 
             erb :'courses/edit'
-        else
-            erb :error, layout: false
-        end
     end
 
     patch '/courses/:id' do
         @course = Course.find_by_id(params[:id])
         authenticate_user(@course)
-
+        @course.update(name: params[:name], description: params[:description], price: params[:price])
+        redirect '/courses'
     end
 
 

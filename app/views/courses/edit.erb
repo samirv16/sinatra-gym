@@ -4,10 +4,11 @@
 
 <% end %>
 
-<form action="/courses/<% @course.id %>" method="post">
+<form action="/courses/<%= @course.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <Label for="name">name:</Label>
     <input id="name" type="text" name="name">
+    <%= @course.name %>
     <br>
     <Label for="name">Description:</Label>
     <br>
@@ -17,6 +18,7 @@
     <br>
     <Label for="price">Price:</Label>
     <input id="price" type="text" name="price">
+    <%= @course.price %>
     <br>
     <input type="submit" value="Create">
     
