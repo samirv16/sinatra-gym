@@ -33,8 +33,8 @@ class CoursesController < ApplicationController
     end
 
     get '/courses/:id/edit' do 
-        authenticate_user
         @course = Course.find_by_id(params[:id])
+        authenticate_user(@course)
         if @course 
             erb :'courses/edit'
         else
@@ -43,7 +43,8 @@ class CoursesController < ApplicationController
     end
 
     patch '/courses/:id' do
-        authenticate
+        @course = Course.find_by_id(params[:id])
+        authenticate_user(@course)
 
     end
 

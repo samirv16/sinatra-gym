@@ -37,6 +37,7 @@ class ApplicationController < Sinatra::Base
 
     def authenticate_user(course)
       authenticate
+      redirect '/error' if !course
       redirect '/home' if current_user != course.user
     end
 

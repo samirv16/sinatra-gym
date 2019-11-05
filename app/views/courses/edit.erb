@@ -4,7 +4,7 @@
 
 <% end %>
 
-<form action="/courses/<% course.id %>" method="post">
+<form action="/courses/<% @course.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <Label for="name">name:</Label>
     <input id="name" type="text" name="name">
