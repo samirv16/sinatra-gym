@@ -7,8 +7,7 @@
 <form action="/courses/<%= @course.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <Label for="name">name:</Label>
-    <input id="name" type="text" name="name">
-    <%= @course.name %>
+    <input id="name" type="text" name="name" value="<%= @course.name %>"required>
     <br>
     <Label for="name">Description:</Label>
     <br>
@@ -17,8 +16,7 @@
     </textarea>
     <br>
     <Label for="price">Price:</Label>
-    <input id="price" type="text" name="price">
-    <%= @course.price %>
+    <input id="price" type="text" name="price" value="<%= @course.price %>"required>
     <br>
     <input type="submit" value="Create">
     
