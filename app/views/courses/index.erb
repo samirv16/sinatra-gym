@@ -1,5 +1,8 @@
 <a href="/courses/new">New Course</a>
 
+<Label for="search">Search:</Label>
+<input id="search" type="text" name="search">
+
 <% @courses.each do |course| %>
     <%= erb :'courses/_course', locals: {user: course.user, course: course} %>
 <% end %>

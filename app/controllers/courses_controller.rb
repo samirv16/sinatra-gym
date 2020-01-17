@@ -45,6 +45,12 @@ class CoursesController < ApplicationController
         redirect '/courses'
     end
 
+    get '/courses/search/:term' do
+        @courses = Course.find_by(name: params[:term])
+        binding.pry
+        erb :'courses/index'
+    end
+
 
 
 end
